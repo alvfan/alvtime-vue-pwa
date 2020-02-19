@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
       args:
-        VUE_APP_HOST: http://localhost
+        VUE_APP_HOST: http://localhost:44394
     volumes:
       - .:/usr/src/app:delegated
       - /usr/src/app/node_modules/
@@ -22,7 +22,7 @@ services:
       dockerfile: ./Dockerfile-local-build
     command: nginx -g 'daemon off;'
     ports:
-      - "80:80"
+      - "44394:80"
     links:
       - dotnet-backend
       - alvtime-vue-local-build

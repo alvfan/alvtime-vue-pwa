@@ -4,3 +4,4 @@ declare module "*.vue" {
 }
 declare module "vue-material/dist/components";
 declare module "vue-mq";
+declare module "vue-adal";

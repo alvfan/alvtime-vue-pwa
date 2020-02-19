@@ -14,13 +14,13 @@ services:
     expose:
       - 8080
     environment:
-      - VUE_APP_HOST=http://localhost:3000
+      - VUE_APP_HOST=http://localhost:44394
   nginx-reverse-proxy:
     container_name: nginx-reverse-proxy
     build: ./nginx/
     command: nginx -g 'daemon off;'
     ports:
-      - "3000:80"
+      - "44394:80"
     links:
       - dotnet-backend
       - alvtime-vue-dev

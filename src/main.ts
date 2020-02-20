@@ -13,8 +13,19 @@ import {
 } from "vue-material/dist/components";
 import VueMq from "vue-mq";
 import moment from "moment";
+import msal from "vue-msal";
+import config from "@/config";
+
 moment.locale("nb");
 
+console.log("TENANT_ID: ", config.TENANT_ID);
+console.log("CLIENT_ID: ", config.CLIENT_ID);
+Vue.use(msal, {
+  auth: {
+    clientId: config.CLIENT_ID,
+    tenantId: config.TENANT_ID,
+  },
+});
 Vue.use(VueMq);
 Vue.use(MdButton);
 Vue.use(MdSnackbar);
